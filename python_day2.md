@@ -60,3 +60,27 @@ bmi_val = input_weight/input_height**2
 
 print("BMI : "+str(bmi_val))
 ```
+
+## F-String
+```python
+# f-String
+score = 0
+height = 1.8
+isWinning = True
+print(f"your score is {score}, your height is {height}, your are wining is {isWinning}")
+```
+
+## Exercies Your Life in Week (90 year olds)
+```python
+# Create a program using maths and f-Strings that tells us how many days,weeks,months we have left if we live until 90 years old
+current_age = input("Your current age : \n")
+target_age = 90
+remaining_age = target_age - float(current_age)
+
+day_remaining = remaining_age * 365
+weeky_remaining = remaining_age * 52
+monthy_remaining = remaining_age * 12
+
+# There are 365 days in a year, 52 weeks in a year and 12 months in year
+print(f"You have {day_remaining} days, {weeky_remaining} weeks and {monthy_remaining} months left.")
+```
