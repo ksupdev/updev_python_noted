@@ -84,3 +84,17 @@ monthy_remaining = remaining_age * 12
 # There are 365 days in a year, 52 weeks in a year and 12 months in year
 print(f"You have {day_remaining} days, {weeky_remaining} weeks and {monthy_remaining} months left.")
 ```
+## Project Tip Calculator
+
+```python
+print("Welcome to the tip calculator .")
+bill_val = float(input("What was the total bill? : $ "))
+tip = int(input("What percentage tip would you like to give? 10, 12, or 15? : "))
+people = int(input("How many people to split the bil? : "))
+
+total_bill_as_tip = (bill_val + ((bill_val*tip)/100))
+bill_per_person = total_bill_as_tip/people
+final_amount = round(bill_per_person,2)
+
+print(f"Each person should pay : $ {final_amount}")
+```
