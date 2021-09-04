@@ -61,3 +61,44 @@ if (year % 4) == 0:
 else:
   print(f"the year {year} is not a leap year")
 ```
+
+### Day 3.4 Pizza Order Exercise
+
+```python
+
+print("Welcome to Python Pizza Deliveries!")
+size = str(input("What size pizza do you want? S,M or L :")).upper()
+add_pepperoni = str(input("Do you want pepperoni? Y or N :")).upper()
+extra_cheese = str(input("Do you want extra cheese? Y or N :")).upper()
+
+# S = $15
+# M = $20
+# L = $25
+
+# Pepperoni for Small pizza : +$2
+# Pepperoni for Medium and Large pizza : +$3
+
+# Extra cheese for any size pizza : + $1
+
+ballance = 0
+
+# Calculate bill for pizza size
+if size == 'S':
+  ballance = 15
+elif size == 'M':
+  ballance = 20
+else:
+  ballance = 25
+
+# Calculate bill for add pepperoni
+if add_pepperoni == "Y":
+  if size == 'M' or size == 'L':
+    ballance += 3
+  else:
+    ballance += 2
+
+if extra_cheese == "Y":
+  ballance += 1
+
+print(f"Your final bill is : {ballance}")
+```
