@@ -102,3 +102,36 @@ if extra_cheese == "Y":
 
 print(f"Your final bill is : {ballance}")
 ```
+
+## Day 3.5 Love Calculator
+
+```python
+print("Welcome to the Love Calculator!")
+name1 = input("What is your name? \n")
+name2 = input("What is their name? \n")
+
+love_score = ""
+keywords = ["true", "love"]
+names = (name1 + name2).lower()
+keywords_score = {  "true" : 0 ,"love" : 0}
+
+for key in keywords_score:
+  score = 0
+  for i, v in enumerate(key):
+    _count = names.count(v)
+    score += _count
+  keywords_score[key] = score
+  love_score += str(keywords_score[key])
+  print(f"key : {key} ,value = {keywords_score[key]} , {love_score}")
+
+
+if love_score != "":
+  love_score_int = int(love_score)
+  if love_score_int < 10 or love_score_int > 90:
+    print(f"Your score is {love_score}, you go together like coke and mentos. ")
+  elif love_score_int >= 40 and love_score_int <= 50:
+      print(f"Your score is {love_score}, you are alright together. ")
+  else:
+    print(f"Your score is {love_score}")
+
+```
