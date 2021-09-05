@@ -22,14 +22,13 @@ position = input("Where do you want to put the treasure? ")
 # 🚨 Don't change the code above 👆
 
 #Write your code below this row 👇
-# [column][row]
 column = 0
 row = 0
 
-column = int(position[0])
-row = int(position[1])
+horizonal = int(position[0])
+vertical = int(position[1])
 print(f"{column} | {row}")
-map[row-1][column-1] = "x"
+map[vertical-1][horizonal-1] = "x"
 
 #Write your code above this row 👆
 
