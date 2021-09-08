@@ -39,3 +39,36 @@ for student in student_scores:
 
 print(f"The highest score in the class is: {max_value}")
 ```
+
+# Day 5.3 Repit
+
+```python
+#Write your code below this row 👇
+sum = 0
+for number in range(2,101,2):
+  sum += number
+
+print(f"{sum}")
+```
+
+# Day 5.4 FizzBuzz
+
+```python
+for number in range(1,101):
+  if number % 3 == 0 and number % 5 == 0:
+    print('FizzBuzz')
+  elif number % 3 == 0:
+    print('Fizz')
+  elif number % 5 == 0:
+    print('Buzz')
+  else:
+    print(f'{number}')
+```
+
+# Day 5.5 Create a Password Generator
+
+```python
+
+```
+
+
