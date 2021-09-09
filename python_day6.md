@@ -54,7 +54,7 @@ def jump():
     turn_aroud_3()
     #turn_left()
     move()
-    while wall_on_right() and wall_in_front() == False:
+    while wall_in_front() == False:
         move()
     turn_left()
     
