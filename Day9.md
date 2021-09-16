@@ -220,34 +220,41 @@ print(temp_high_bid)
 ## Bid auction-start (udemy)
 
 ```python
-travel_log = [
-{
-  "country": "France",
-  "visits": 12,
-  "cities": ["Paris", "Lille", "Dijon"]
-},
-{
-  "country": "Germany",
-  "visits": 5,
-  "cities": ["Berlin", "Hamburg", "Stuttgart"]
-},
-]
-#🚨 Do NOT change the code above
+from replit import clear
+from art import logo
+#HINT: You can call clear() to clear the output in the console.
 
-#TODO: Write the function that will allow new countries
-#to be added to the travel_log. 👇
+print(logo)
 
-def add_new_country(country_visited, time_visited, cities_visited):
-  # create dictionaries temp
-  country_dict = {}
-  country_dict["country"] = country_visited
-  country_dict["visits"] = time_visited
-  country_dict["cities"] = cities_visited
-  travel_log.append(country_dict)
+bids = {}
 
-#🚨 Do not change the code below
-add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
-print(travel_log)
+def find_highest_bidder(bidding_record):
+  # {}
+  highest_bid = 0
+  winner = ""
+  for bidder in bidding_record:
+    bid_amount = bidding_record[bidder]
+    if bid_amount > highest_bid:
+      highest_bid = bid_amount
+      winner = bidder
+
+  print(f"The winner is {winner} with a bid of ${str(highest_bid)}")
+
+bidding_finished = False
+while not bidding_finished:
+  name = input("What is your name?")
+  price = int(input("What' is your bid? $"))
+  bids[name] = price
+  should_continue = input("Are there any other bidders? Type 'yes' or 'no' .")
+  if should_continue == "no":
+    bidding_finished = True
+  elif should_continue == "yes":
+    clear()
+
+find_highest_bidder(bids)
+
+
+
 ```
 
 
