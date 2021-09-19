@@ -1,5 +1,6 @@
 # The Blackjack Capstone
 
+## Updev version
 ```python
 ############### Blackjack Project #####################
 
@@ -99,17 +100,6 @@ def check_base_rule(cards):
       print(f" Your current {user_card} score {sum_score(user_card)}")
       return "continue"
 
-
-card = [11,8,10,3]
-
-# if is_Blackjack(card):
-#   print("Win")
-# else:
-#   if is_Over21(card):
-#     print("Lose")
-#   else:
-#     print(f" Your score {sum_score(card)}")
-
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 user_card = []
 computer_card = []
@@ -129,58 +119,59 @@ print(f"computer_card {computer_card[0]}")
 # Check is BlackJack
 
 get_more_card = "y"
-continue_game = True
+re_cal = True
+end_game = False
 
-while continue_game:
+while re_cal:
   result_cond = check_base_rule(user_card)
 
   if result_cond == "win":
     print("User is Win")
-    continue_game = False
+    re_cal = False
+    end_game = True
   elif result_cond == "lose":
     print(f"User is Lose with {sum_score(user_card)}")
-    continue_game = False
+    re_cal = False
+    end_game = True
   else:
     get_more_card = str(input("Do you want to get another card? , please fill y:"))
     if get_more_card == "y":
       user_card.append(random_cards(cards))
       # print(f"user_card {user_card} with {sum_score(user_card)}")
     else:
-      continue_game = False
+      re_cal = False
 
+if end_game == False:
+  user_score = sum_score(user_card)
+  com_final_score = 0
+  while end_game == False:
+    com_result_cond = check_base_rule(computer_card)
+    if com_result_cond == "win":
+      print("Computer is Win")
+      end_game = True
+    elif com_result_cond == "lose":
+      print(f"Computer is Lose with {sum_score(computer_card)}")
+      end_game = True
+    else:
+      if sum_score(computer_card) <= 17:
+        computer_card.append(random_cards(cards))
+        com_final_score = sum_score(computer_card)
+        print(f"computer_card {com_final_score}")
+      else:
+        end_game = True
+        com_final_score = sum_score(computer_card)
+        print(f"computer_card {com_final_score}")
 
+  if com_final_score > user_score:
+    print("Computer is Win")
+  elif com_final_score < user_score:
+    print("User is Win")
+  else:
+    print("Draw")
+```
 
-# while continue_game:
-#   if is_Blackjack(user_card):
-#     print("Win")
-#     continue_game = False
-#   else:
-#     if is_Over21(user_card):
-#       print("Lose")
-#       continue_game = False
-#     else:
-#       print(f" Your score {sum_score(user_card)}")
+## Udemy version
 
-#       get_more_card = str(input("Do you want to get another card? , please fill y:"))
-
-#       if get_more_card == "y":
-#         user_card.append(random_cards(cards))
-#         print(f"user_card {user_card} with {sum_score(user_card)}")
-#       else:
-#         continue_game = False
-
-
-# while sum_score(computer_card) <= 17 :
-#   computer_card.append(random_cards(cards))
-#   print(f"computer_card {computer_card}")
-
-  
-
-
-
-# check condition
-
-
-
+```python
 
 ```
