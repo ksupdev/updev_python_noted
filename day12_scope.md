@@ -29,3 +29,5 @@ enemies Outside function : 1
 UnboundLocalError: local variable 'enemies' referenced before assignment
 ```
 
+จากเงื่อนไขต่างๆ เราอาจจะสามารถมองว่า ``enemies`` นั้นเป็น Constants ซึ่งตามโดยปกติ เราจะใช้เป็นตัวใหญ่ทั้งหมดแทน ``ENEMIES`` 
+
